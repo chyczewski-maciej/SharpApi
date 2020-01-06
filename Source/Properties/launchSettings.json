@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SharpApi.RestApi": {
+      "commandName": "Project",
+      "commandLineArgs": "-c ../../../../api.yaml"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+group SharpApi
+  FSharp.Core
+  Giraffe
+  Microsoft.AspNetCore
+  Newtonsoft.Json
+  System.Data.SQLite
+  YamlDotNet.NetCore
+  CommandLineParser

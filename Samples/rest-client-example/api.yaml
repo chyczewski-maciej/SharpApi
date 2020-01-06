@@ -1,0 +1,19 @@
+Documents:
+
+- Name: Products
+  Actions:
+    - GET
+    - HEAD
+    - POST
+    - PUT
+    - DELETE
+  Fields:
+  - Name: Id
+    Type: Integer
+  - Name: Name
+    Type: String
+  - Name: Price
+    Type: Float
+  - Name: OnSale
+    Type: Boolean
+  Key: Id

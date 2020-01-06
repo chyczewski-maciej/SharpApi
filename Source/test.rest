@@ -1,0 +1,73 @@
+# Open in VSCode with *REST Client* extension
+# https://github.com/Huachao/vscode-restclient
+
+@host = http://localhost:5000
+@document = Products
+@id = 3
+@productName = "cheese{{id}}"
+
+POST {{host}}/{{document}} HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{ "Id": {{id}}, "Name": {{productName}}, "Price": 30.00, "OnSale": true }
+###
+
+GET {{host}}/{{document}} HTTP/1.1
+###
+
+GET {{host}}/{{document}}/{{id}} HTTP/1.1
+Accept: text/xml
+###
+
+GET {{host}}/{{document}}/{{id}} HTTP/1.1
+Accept: application/json
+###
+
+HEAD {{host}}/{{document}}/{{id}} HTTP/1.1
+###
+
+PUT {{host}}/{{document}}/{{id}} HTTP/1.1
+Content-Type: application/json
+
+{ "Id": {{id}}, "Name": {{productName}}, "Price": 230.33, "OnSale": false }
+###
+
+DELETE {{host}}/{{document}}/{{id}} HTTP/1.1
+###
+
+
+
+
+
+GET http://localhost:5000/Customers HTTP/1.1
+###
+
+POST http://localhost:5000/Customers HTTP/1.1
+content-type: text/plain
+
+{ "SSN": 4, "Name": "Jone", "Surname": "Doe" }
+###
+POST http://localhost:5000/Customers HTTP/1.1
+content-type: text/plain
+
+{ "name": "John", "Surname": "Ddoe" }
+###
+
+# Valid endpoint with invalid object
+
+POST http://localhost:5000/Products HTTP/1.1
+content-type: text/plain
+
+{ "Name": "Cheese", "Price": 30 }
+###
+
+
+
+# Invalid endpoints
+
+DELETE http://localhost:5000/Products HTTP/1.1
+###
+
+GET http://localhost:5000/Unknown HTTP/1.1
+###

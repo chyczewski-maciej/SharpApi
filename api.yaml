@@ -1,0 +1,32 @@
+Database: InMemory
+Documents:
+  - Name: Products
+    Actions:
+      - GET
+      - HEAD
+      - POST
+      - PUT
+      - DELETE
+    Fields:
+    - Name: Id
+      Type: Integer
+    - Name: Name
+      Type: String
+    - Name: Price
+      Type: Float
+    - Name: OnSale
+      Type: Boolean
+    Key: Id
+  
+  - Name: Customers
+    Actions:
+      - GET
+      - POST
+    Fields:
+    - Name: Id
+      Type: Integer
+    - Name: FirstName
+      Type: String
+    - Name: LastName
+      Type: String
+    Key: Id

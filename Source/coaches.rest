@@ -1,0 +1,51 @@
+# Open in VSCode with *REST Client* extension
+# https://github.com/Huachao/vscode-restclient
+
+@host = http://localhost:5000
+@document = Coaches
+
+POST {{host}}/{{document}} HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{ 
+  "Id": 1, 
+  "FirstName": "Tike",
+  "LastName": "Mayson",
+  "Sport":"Boxing",
+  "Latitude": 59.913159,
+  "Longitude": 10.738591
+}
+###
+POST {{host}}/{{document}} HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{ 
+  "Id": 2, 
+  "FirstName": "Foger",
+  "LastName": "Renderer",
+  "Sport":"Tennis",
+  "Latitude": 59.913159,
+  "Longitude": 10.738591
+}
+###
+
+GET {{host}}/{{document}} HTTP/1.1
+###
+
+GET {{host}}/{{document}}/2 HTTP/1.1
+Accept: application/json
+###
+
+HEAD {{host}}/{{document}}/{{id}} HTTP/1.1
+###
+
+PUT {{host}}/{{document}}/{{id}} HTTP/1.1
+Content-Type: application/json
+
+{ "Id": {{id}}, "Name": {{productName}}, "Price": 230.33, "OnSale": false }
+###
+
+DELETE {{host}}/{{document}}/{{id}} HTTP/1.1
+###

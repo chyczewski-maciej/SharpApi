@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Core/Configuration.fs" />
+    <Compile Include="Core/Models.fs" />
+    <Compile Include="Core/Validation.fs" />
+    <Compile Include="CommandLineArguments.fs" />
+    <Compile Include="Extensions\Result.fs" />
+    <Compile Include="FatalError.fs" />
+    <Compile Include="Serialization\Xml\ExtendableXmlSerializer.fs" />
+    <Compile Include="Serialization\Yaml\Exceptions.fs" />
+    <Compile Include="Serialization\Yaml\SimpleDiscriminatedUnionConverter.fs" />
+    <Compile Include="Serialization\Yaml\ConfigurationSerializer.fs" />
+    <Compile Include="Serialization\Json\DocumentObjectConverter.fs" />
+    <Compile Include="Databases\IDatabase.fs" />
+    <Compile Include="Databases\FileSystemDatabase.fs" />
+    <Compile Include="Databases\InMemoryDatabase.fs" />
+    <Compile Include="HttpHandlersGenerator.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Watch Include="..\api.yaml" watch="true" />
+  </ItemGroup>
+
+  <Import Project="..\.paket\Paket.Restore.targets" />
+</Project>

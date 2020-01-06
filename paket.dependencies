@@ -1,0 +1,12 @@
+framework: netcoreapp3.0
+
+group SharpApi
+  source https://api.nuget.org/v3/index.json
+  
+  nuget Giraffe
+  nuget FSharp.Core
+  nuget Microsoft.AspNetCore
+  nuget Newtonsoft.Json
+  nuget System.Data.SQLite
+  nuget YamlDotNet.NetCore
+  nuget CommandLineParser
